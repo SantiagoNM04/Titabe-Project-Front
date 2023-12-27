@@ -1,0 +1,45 @@
+.container-product{
+    background-color: var(--color-lightdark);
+    border: solid 3px var(--color-orangefire);
+    width: 16vw !important;
+    height: 56vh;
+}
+
+.img-product{
+    width: 32vh !important;
+    border: solid 3px var(--color-orangefire);
+}
+
+.title-product{
+    background-color: var(--color-orangefire);
+}
+
+.text-price{
+    color: var(--color-orangefire);
+}
+
+.button-product{
+    transition: all 0.3s;
+}
+
+.button-product:hover{
+    background-color: var(--color-orangefire);
+    color: var(--color-white);
+}
+
+.text-noStock {
+    width: 100%;
+}
+
+#title-input::placeholder{
+    color: var(--color-white);
+}
+
+.input-newProduct{
+    border: 2px solid var(--color-orangefire);
+    color: var(--color-orangefire);
+}
+
+.input-newProduct::placeholder{
+    color: var(--color-orangefire);
+}

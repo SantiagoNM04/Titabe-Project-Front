@@ -1,0 +1,77 @@
+.section-container{
+    margin-top: 120px;
+}
+
+.login-section{
+    height: 55vh;
+}
+
+.login-container{
+    border: 5px solid var(--color-orangefire);
+    width: 28%;
+    height: 120%;
+    background-color: var(--color-lightdark);
+}
+
+.title-login{
+    background-color: var(--color-orangefire);
+}
+
+.input-container{
+    width: 400px;
+}
+
+.button-submit{
+    background-color: var(--color-orangefire);
+    transition: all 0.3s;
+}
+
+.button-submit:hover{
+    background-color: #fca738;
+}
+
+
+.fp-text{
+    font-size: 14px;
+}
+
+.button-logAndReg{
+    background-color: #373636;
+    transition: all 0.3s;
+    text-transform: uppercase;
+}
+
+.button-logAndReg:hover{
+    background-color: #6b6a6a;
+}
+
+.navContainer{
+    margin-top: 200px;
+    
+}
+
+.user-container{
+    width: 50px;
+    height: 50px;
+    background-color: var(--color-orangefire);
+}
+
+.user-iconColor{
+    color: var(--color-lightdark);
+    transition: all 0.3s;
+}
+
+.user-iconColor:hover{
+    color: var(--color-white);
+}
+
+.authUser-container{
+    background-color: var(--color-orangefire);
+    color: var(--color-lightdark);
+}
+
+.userOptions-button{
+    background-color: transparent;
+    border-style: none;
+    color: var(--color-white);
+}

@@ -1,0 +1,26 @@
+.shop-title{
+    background-color: var(--color-lightdark);
+    border: 3px solid  var(--color-orangefire);
+    border-left: 0;
+    border-right: 0;
+    margin-top: 140px;
+}
+
+.admin-options{
+    background-color: var(--color-lightdark);
+    border: 3px solid  var(--color-orangefire);
+    border-left: 0;
+    border-right: 0;
+}
+
+.admin-buttons{
+    background-color: var(--color-white);
+    border: 3px solid  #c0bdbd;
+    transition: all 0.3s;
+}
+
+.admin-buttons:hover{
+    background-color: #c0bdbd;
+    border: 3px solid  #ffffff;
+
+}

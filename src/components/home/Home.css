@@ -1,0 +1,41 @@
+.orangeFire{
+    font-size: 130vh;
+    position: fixed;
+    color: var(--color-orangefire);
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    top: 10%;
+}
+ 
+.title{
+    font-weight: 700;
+}
+ 
+.underline-titabe{
+    text-decoration: underline;
+}
+ 
+.slogan-container{
+    background-color: var(--color-lightdark);
+    color: var(--color-white);
+}
+ 
+.button-shop{
+    font-weight: 600;
+}
+ 
+.fs-xxl{
+    font-size: var(--font-xxl);
+    font-weight: 800;
+}
+ 
+.titabe-container{
+    top: 0px;
+    left: 83%;
+}
+
+.titabe-img{
+    width: 170%;
+}

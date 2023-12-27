@@ -1,0 +1,18 @@
+*{
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  --color-lightdark: #171616;
+  --color-orangefire: #E1810C;
+  --color-white: #FAF9FF;
+  --font-xxl: 60px;
+}
+
+body{
+  background-image: url(../src/assets/titabeDesignDark.png);
+  background-size: cover;
+}
