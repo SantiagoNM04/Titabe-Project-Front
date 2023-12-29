@@ -10,6 +10,9 @@ import axios from "axios";
 export const Router = () => {
 
   const [products, setProducts] = useState([]);
+  const [isAuthenticated, setAuthenticated] = useState(false); // Comprueba si esta validado el usuario.
+  const [userAuth, setUserAuth] = useState(''); // Trae el usuario de la database para mostrarlo en el Nav.
+  const [admin, setAdmin] = useState(false);
 
   useEffect(() => {
     const getProducts = async () => {
@@ -23,13 +26,7 @@ export const Router = () => {
       }
     };
     getProducts();
-    // console.log(products)
   },[])
-
-
-  const [isAuthenticated, setAuthenticated] = useState(false); // Comprueba si esta validado el usuario.
-  const [userAuth, setUserAuth] = useState(''); // Trae el usuario de la database para mostrarlo en el Nav.
-  const [admin, setAdmin] = useState(false);
 
   // Cuando el usuario se quiere registrar se ejecuta esta funcion.
   const handleRegister = async(event) => {
@@ -42,7 +39,7 @@ export const Router = () => {
     try {
       await axios.post('http://localhost:4300/user/register', { username, email, password });
       console.log('>> User registered successfully');
-      window.location.href = '/'; 
+      // Crear funcion que muestre que el usuario fue registrado con exito
     
     } catch (error) {
       console.error('>> Failed to register the user: ', error);
@@ -70,7 +67,6 @@ export const Router = () => {
           console.log(">> Admin logged in")
           console.log(admin)
         }
-
       }
 
     } catch (error) {

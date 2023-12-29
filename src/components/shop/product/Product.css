@@ -2,7 +2,7 @@
     background-color: var(--color-lightdark);
     border: solid 3px var(--color-orangefire);
     width: 16vw !important;
-    height: 56vh;
+    height: 62vh;
 }
 
 .img-product{
@@ -38,6 +38,7 @@
 .input-newProduct{
     border: 2px solid var(--color-orangefire);
     color: var(--color-orangefire);
+    font-size: 14px;
 }
 
 .input-newProduct::placeholder{
