@@ -10,11 +10,18 @@ import axios from "axios";
 export const Router = () => {
 
   const [products, setProducts] = useState([]);
-  const [isAuthenticated, setAuthenticated] = useState(false); // Comprueba si esta validado el usuario.
-  const [userAuth, setUserAuth] = useState(''); // Trae el usuario de la database para mostrarlo en el Nav.
-  const [admin, setAdmin] = useState(false);
+  const [isAuthenticated, setAuthenticated] = useState(
+    JSON.parse(localStorage.getItem("savedIsAuthenticated")) || false
+  );
+  const [userAuth, setUserAuth] = useState(
+    JSON.parse(localStorage.getItem("savedUserAuth")) || ""
+  );
+  const [admin, setAdmin] = useState(
+    JSON.parse(localStorage.getItem("savedAdmin")) || false
+  );
 
   useEffect(() => {
+    // Obtengo los productos una vez al cargar el componente (Router).
     const getProducts = async () => {
       try {
         const response = await axios.get('http://localhost:4300/shop');
@@ -25,6 +32,7 @@ export const Router = () => {
         console.error('Error al obtener productos', error);
       }
     };
+    
     getProducts();
   },[])
 
@@ -44,6 +52,7 @@ export const Router = () => {
     } catch (error) {
       console.error('>> Failed to register the user: ', error);
     }
+
   };
   
   // Cuando el usuario se quiere loguear se ejecuta esta funcion.
@@ -61,26 +70,38 @@ export const Router = () => {
       if (response.status === 200) {
         setAuthenticated(true);
         setUserAuth(response.data)
-
-        if (userAuth === 'Santiago') {
-          setAdmin(true)
-          console.log(">> Admin logged in")
-          console.log(admin)
-        }
       }
 
     } catch (error) {
       console.error('>> Error in the validation:');
     }
+
+    if (userAuth === 'Santiago') {
+      setAdmin(true)
+      console.log(">> Admin logged in")
+      console.log(admin)
+    }
+
   };
 
   // Cuando el usuario cierra sesion se ejecuta esta funcion.
   const onLogOut = async() => {
+    localStorage.removeItem("savedIsAuthenticated");
+    localStorage.removeItem("savedUserAuth");
+    localStorage.removeItem("savedAdmin");
+
     setAuthenticated(false);
     setAdmin(false);
     console.log('>> User logged Out')
     console.log(admin)
   };
+
+  // Guarda estados en el localStorage cada vez que cambian
+  useEffect(() => {
+    localStorage.setItem("savedIsAuthenticated", JSON.stringify(isAuthenticated));
+    localStorage.setItem("savedUserAuth", JSON.stringify(userAuth));
+    localStorage.setItem("savedAdmin", JSON.stringify(admin));
+  }, [isAuthenticated, userAuth, admin]);
 
 
   return (

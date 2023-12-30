@@ -98,7 +98,7 @@ export const User = ({isAuthenticated, onLogOut, handleLogin, handleRegister, us
                     onClick={(event) => {
                     handleRegister(event);
                     }}
-                    type="submit"
+                    type="button"
                     >
                         SUBMIT
                     </button>
@@ -108,7 +108,7 @@ export const User = ({isAuthenticated, onLogOut, handleLogin, handleRegister, us
                     onClick={(event) => {
                         handleLogin(event);
                     }}
-                    type="submit"
+                    type="button"
                     >
                     SUBMIT
                     </button>

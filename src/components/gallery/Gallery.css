@@ -1,0 +1,5 @@
+.color-bar{
+    width: 1vw;
+    height: 95vh;
+    background-color: var(--color-orangefire);
+}
